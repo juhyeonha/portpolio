@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--과제2가 html이랑 로그인과 회원가입 자바스크립트 연결 완료된 페이지-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    html{
+        min-width: 900px;
+        max-width: 1500px;
+    }
+    body { /*--전체 css 효과 적용--*/
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(rgb(255, 255, 255),rgb(126, 126, 126),rgb(40, 40, 40))
+    }
+
+    header { /*--머리 부분--*/
+        position: relative;
+        padding: 40px 0;
+        text-align: center;
+        background: url("img/IMG_2958.jpg") no-repeat center;
+        background-size: 100% ;
+    }
+      
+    #log { /*-- 로그인 회원가입 css --*/
+    position: absolute;
+    top: 50px;
+    right: 70px;
+    display: flex;
+    gap: 10px;
+    }
+
+    #log input {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+    #log input:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+    header ul { /*--머리 부분의 배경효과--*/
+        padding: 5px;
+        background-color: rgba(39, 38, 38, 0.5);
+        width: 30%;
+        height: 10%;
+        line-height: 30px;
+        margin:auto;
+        letter-spacing: 2px;
+    }
+    header nav ul li {/*--머리 글자 부분 */
+        display: inline;
+        margin-right: 20px;
+    }
+
+    header nav ul li a { /*--머리 부분 하이퍼링크 효과--*/
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 20px;
+    }
+   
+    section { /*-- 전체 섹션의 그림자 및 효과 들--*/
+        padding: 30px;
+        margin: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 10px 5px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    section #letter { 
+        background-color: rgba(0, 0, 0, 0.6);  
+        color: #f9f3f3;
+        padding:10px;
+        line-height: 25px;
+        width: 90%;
+    }
+
+    section h1{  
+        text-align:center; 
+        background-color: rgba(0, 0, 0, 0.6);  
+        width: 20%;    
+        margin-top: 10px;
+        letter-spacing: 01.5px;
+    }
+
+
+    section h2 { /*--문단의 대표 글자--*/
+        color: #000000;
+        margin-top: 3px;
+    }
+
+    section p { /*--문단 마다의 글자--*/
+        color: #000000;
+    }
+
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background: #191919;
+        color: #fff;
+        clear:both;
+    }
+
+
+    #e{
+        background: url("img/IMG_5043.jpg") no-repeat center;
+        background-size: 100% ;
+        color: white;
+        height: 500px;
+        transition: background-size 0.3s ease-in-out;
+    }
+    #e:hover {
+    background-size: 110%;
+    }
+    .image, .ppf{
+        display: inline-block;
+        width: 130px;
+        height: 130px;
+        margin: 7px ;
+        overflow-x: auto;
+        white-space: nowrap;
+
+      } 
+
+    #imge:hover, .image:hover, .ppf:hover, .r8:hover{
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+    }
+ 
+    #a{ /* 썬팅 문단 배경사진 */
+        background: url("img//car.jpg") no-repeat center;
+        background-size: 100% ;
+        height: 280px;
+    }
+    
+    .insta{
+        text-decoration: none;
+        color: pink;
+    }
+    .container{
+        text-align: center;
+        display: block;
+      }
+
+    #c{height: 480px;}/*--견적 단락*/
+
+    /*  .fade-in{
+        opacity: 0;
+        animation: fadeIn 2s ease-in forwards;
+      }
+      @keyframes fadeIn{
+        from{opacity: 0;}
+        to{opacity: 1;}
+      }*/
+
+
+    </style>
+</head>
+<html>
+
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#a">썬팅 브랜드</a>
+                </li>
+                <li>
+                    <a href="#b">작업후기</a>
+                </li>
+                <li>
+                    <a href="#d">PPF</a>
+                </li>
+                <li>
+                    <a href="#c">서비스</a>
+                </li>
+             
+            </ul>
+        </nav>
+        <div id="log">
+        <input type="button" value="로그인" id="fhrmdls">
+        <input type="button" value="회원가입" id="ghldnjs">
+        </div>
+    </header>
+  
+    <section id="e">
+        <h1>신차패키지</h1>
+        <p id="letter">신차패키지란 고객님의 소중한 자동차를 신차로 구매하실때,<br>
+            신차 상태 그대로 보존하면서도 외부의 대미지로부터 보호받으며,<br>
+            프라이버시와 안전까지 보호받을 수 있는 모든 작업을 일컫는 말입니다.
+        </p>
+    </section>
+
+    <section id="a" style="text-align: right">
+       <!--피트인 효과 안먹음-->
+     
+        <p style="color: aliceblue;">
+            <span style="font-size: 20px;">썬팅</span><br>은 신차패키지 기본 작업 중 가장 대표적이라 볼 수 있는 작업이다.<br>
+            썬팅을 하는 목적이 프라이버시라고 생각하는 경우가 많지만,<br>
+            썬팅은 프라이버시 목적보다는 태양열에서 나오는 자외선으로부터<br>
+            <strong><u>소중한 피부를 보호하기 위함이 가장 본 목적이다</u></strong><Br>
+            하지만 흔히 보이는 필름을 아무거나 시공받게 된다면 <br>
+            제대로 된 자외선 차단을 되지 않을뿐더러,<br>
+            짧은 기간 안에 변색과 탈색이 진행되어 시공하나마나인 효과를 볼 수 있다<br>
+            그러기 위해서는 필름의 성능을 꼼꼼히 파악해 보는 것을 추천한다.<br>
+            <button onclick= "window.location.href='https://www.isolargard.com';" 
+            style="margin-top: 10px; background-color: transparent; border: 1px solid white; color: white;" > 추천하는 필름 보러가기</button>
+        </p>
+    </div>
+        </section>
+
+
+
+    <section id="b" style="text-align: center;">
+        <h2>[ 작업 후기 포토모음 ]</h2><hr>
+        <p>아래 사진들은 직접 시공을 진행한 차량들의 사진들이다.</p>
+        <div class="scroll">
+        <img src="img/KakaoTalk_20211104_152329986_26.jpg" class="image">
+        <img src="img/IMg_9968.jpg"class="image" >
+        <img src="img/IMG_8485.jpg"class="image">
+        <img src="img/IMG_8457.jpg"class="image">
+        <img src="img/IMG_8067.jpg"class="image">
+        <img src="img/IMG_7814.jpg"class="image">
+        <img src="img/IMG_5423.jpg"class="image">
+        <img src="img/IMG_0437.jpg"class="image">
+        <img src="img/울산_썬팅_(14).jpg"class="image">
+        <img src="img/2.jpg"class="image">
+        <img src="img/IMG_7089.jpg"class="image">
+        <img src="img/IMG_1775.jpg"class="image">
+        <img src="img/IMG_2575.jpg"class="image">
+        <img src="img/IMG_7209_jpg.jpg"class="image">
+        <img src="img/IMG_7056.jpg"class="image">
+        <img src="img/IMG_8236.jpg"class="image">
+        </div>
+    </section>
+
+
+    <section id="d" style="text-align: center;">
+        <h2>PPF</h2>
+        <p><hr>PPF란 자동차의 도장면을 보호하기 위함이라고 볼 수 있다.</p>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="text-align: center;">
+            <img src="img/IMG_0198.jpg" width="150px" height="130px" class="ppf">
+            <p><strong>사이드스텝</strong></p></div>
+                <div style="text-align: center;">
+                <img src="img/0509.jpg" width="150px" height="130px" class="ppf">
+                <p><strong>문짝</strong></p></div>
+                    <div style="text-align: center;">
+                    <img src="img/0505.jpg" width="150px" height="130px" class="ppf">
+                    <p><strong>루프스킨</strong></p></div>
+                        <div style="text-align: center;">
+                        <img src="img/0808.jpg" width="150px" height="130px" class="ppf">
+                        <p><strong>휀다몰딩</strong></p></div>
+                        <div style="text-align: center;">
+                            <img src="img/0606.jpg" width="150px" height="130px" class="ppf">
+                            <p><strong>휀다</strong></p></div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+
+    <section id="c" style="text-align: center;">
+        <div> <!--견적내기 차량 하나-->
+        <p style="font-size: 22px;">
+            <strong>내 차 견적내기</strong>
+            <span style="display: inline-block; width: 50px; height: 20px; 
+            background-color: black; color : white; 
+            font-size: 17px; border-radius: 10px;"  >Top1</span>
+            </p>
+            <img src="img/r8.jpg.png" class="r8">
+            <p style="font-size:large; font-weight: bolder;">프리미엄 썬팅 + 유리막코팅 + 생활보호 PPF + 블랙박스 </p><hr>
+
+            <p style="float: right; margin: 5px; 
+            font-size:large; font-weight: bolder;">1,500,000원</p>
+
+            <input type="button" value="견적 확인하기" onclick id="ruswjr"
+            style="float: right; clear: both; 
+            width: 100px; height: 25px; font-size: 13px;
+            background-color: #000000; color: #ffffff;
+            border: none;" >
+        </div>
+    </section>
+
+    <footer>
+       <p>하주현의 홈페이지</p>
+       <p>이메일 : hhh010509@naver.com</p>
+       <p>전화번호 : 010-2652-9120</p>
+       <p>찾아오시는 길 : 울산 남구 삼산동 1570-1</p>
+       <a href="https://www.instagram.com" class="inst">공식 인스타그램</a>
+    </footer>
+
+    <script src="../dhlqn.js"></script>
+
+</body>
+</html>
+
+</body>
+</html>
